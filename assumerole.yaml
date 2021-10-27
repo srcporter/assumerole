@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: s3write
-  namespace: s3write
+  name: assumerole
+  namespace: assumerole
   labels:
-    app: s3write
+    app: assumerole
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: s3write
+      app: assumerole
   template:
     metadata:
       labels:
-        app: s3write
+        app: assumerole
     spec:
-      serviceAccount: s3write
+      serviceAccount: assumerole
       containers:
-        - name: s3write
-          image: srcporter/s3write:1.8
+        - name: assumerole
+          image: quay.io/cporter/assumerole:1.1000
       securityContext:
         fsGroup: 3001

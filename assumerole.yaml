@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: s3write
+  namespace: s3write
+  labels:
+    app: s3write
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: s3write
+  template:
+    metadata:
+      labels:
+        app: s3write
+    spec:
+      serviceAccount: s3write
+      containers:
+        - name: s3write
+          image: srcporter/s3write:1.8
+      securityContext:
+        fsGroup: 3001

@@ -17,4 +17,4 @@ spec:
     spec:
       containers:
         - name: assumerole
-          image: quay.io/cporter/assumerole:1.1007
+          image: quay.io/cporter/assumerole:1.1010

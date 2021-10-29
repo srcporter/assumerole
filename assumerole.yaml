@@ -15,9 +15,6 @@ spec:
       labels:
         app: assumerole
     spec:
-      serviceAccount: assumerole
       containers:
         - name: assumerole
-          image: quay.io/cporter/assumerole:1.1000
-      securityContext:
-        fsGroup: 3001
+          image: quay.io/cporter/assumerole:1.1007
